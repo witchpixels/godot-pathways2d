@@ -12,13 +12,14 @@ config_version=5
 
 config/name="Pathways 2D"
 config/description="Pathways 2d is a plugin for Godot 4 that allows creation of textured paths that follow a Curve2D using the editor's build in controls."
+run/main_scene="res://examples/simple_road_example.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.png"
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=270
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/size/resizable=false
 window/stretch/aspect="keep_height"
 
