@@ -21,6 +21,31 @@ var terrain_layers: Array[TerrainLayer] = []
 @export_group("Furniture")
 var furniture_items: Array[Furniture] = []
 
+var path_layer_callable_handles: Dictionary = Dictionary()
 
 func _ready():
-    print("hello")
+    pass
+
+func _process(_delta):
+    for i in range(terrain_layers.size()):
+        if terrain_layers[i] == null:
+            continue
+
+        var callable: Callable = Callable(self, "path_layer_changed");
+        callable = callable.bind(i);
+
+        if path_layer_callable_handles.has(i):
+            callable = path_layer_callable_handles[i]
+
+            if terrain_layers[i].is_connected("changed", callable):
+                continue
+        else:
+            path_layer_callable_handles[i] = callable
+
+
+        print("(re)Connected terrain layer", i)
+        terrain_layers[i].connect("changed", callable)
+
+
+func path_layer_changed(index):
+    print("path layer ", index, "changed")
