@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlaxs22ssslqk"]
+
+[ext_resource type="Script" path="res://addons/pathways_2d/open_path_2d/open_path_2d.gd" id="1_s58p3"]
+
+[sub_resource type="Curve2D" id="Curve2D_lmp81"]
+
+[node name="SimpleRoadExample" type="Node2D"]
+
+[node name="Pathway2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_lmp81")
+script = ExtResource("1_s58p3")
+terrain_layers = Array[Resource("res://addons/pathways_2d/shared/pathway_terrain_layer.gd")]([null])
+furniture_items = Array[Resource("res://addons/pathways_2d/shared/pathway_terrain_layer.gd")]([null])
