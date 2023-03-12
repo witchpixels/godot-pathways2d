@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlaxs22ssslqk"]
+[gd_scene load_steps=11 format=3 uid="uid://dlaxs22ssslqk"]
 
 [ext_resource type="Script" path="res://addons/pathways_2d/pathways/pathway_2d.gd" id="1_j3d6w"]
 [ext_resource type="Script" path="res://addons/pathways_2d/shared/pathway_terrain_layer.gd" id="2_7s2t1"]
@@ -20,9 +20,15 @@ path_width = 62
 
 [sub_resource type="Curve2D" id="Curve2D_konfy"]
 _data = {
-"points": PackedVector2Array(-98.995, 234.759, 98.995, -234.759, -100, 607, -80.6102, 0, 80.6102, 0, 163, 342, -124.451, 1.41421, 124.451, -1.41421, 843, 338, -175.362, -98.995, 175.362, 98.995, 1424, 860)
+"points": PackedVector2Array(-98.995, 234.759, 98.995, -234.759, -100, 607, -80.6102, 0, 80.6102, 0, 159, 351, -124.451, 1.41421, 124.451, -1.41421, 852, 351, -175.362, -98.995, 175.362, 98.995, 1424, 860)
 }
 point_count = 4
+
+[sub_resource type="Resource" id="Resource_orfib"]
+script = ExtResource("2_7s2t1")
+texture = ExtResource("3_1dexl")
+z_index = 0
+path_width = 96
 
 [sub_resource type="Resource" id="Resource_ukno0"]
 script = ExtResource("2_7s2t1")
@@ -43,7 +49,7 @@ terrain_layers = Array[ExtResource("2_7s2t1")]([SubResource("Resource_c8c51")])
 z_index = 1
 curve = SubResource("Curve2D_konfy")
 script = ExtResource("1_j3d6w")
-terrain_layers = Array[ExtResource("2_7s2t1")]([SubResource("Resource_ukno0")])
+terrain_layers = Array[ExtResource("2_7s2t1")]([SubResource("Resource_orfib"), SubResource("Resource_ukno0")])
 
 [node name="Strictly Artistic Inclusions" type="Node" parent="."]
 
