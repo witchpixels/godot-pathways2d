@@ -11,8 +11,8 @@ class_name PathwayTerrainLayer extends Resource
     get:
         return _texture
     set(value):
-        if value != texture:
-            texture = value
+        if value != _texture:
+            _texture = value
             emit_changed()
 
 ## Set the z index for this layer. Use it if you need to resolve sorting of one layer over another.
@@ -25,14 +25,14 @@ class_name PathwayTerrainLayer extends Resource
             emit_changed()
 
 ## Set the scale of the texture. This will reduce the width of the line, as it will be based on the size of the texture * scale
-@export var texture_scale: float:
+@export var path_width: int:
     get:
-        return _texture_scale
+        return _path_width
     set(value):
-        if value != _texture_scale:
-            _texture_scale = value
+        if value != _path_width:
+            _path_width = value
             emit_changed()
 
 var _texture: Texture2D
 var _z_index: int = 0
-var _texture_scale: float = 1.0
+var _path_width: int = 16
